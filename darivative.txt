@@ -1,33 +1,102 @@
-pipeline {
+pipeline 
+{
 	agent any
-	    stages {
-		stage('one') {
+	    stages 
+	    {
+		    stage('Rohit45') {
 			steps {
-			      echo 'Hi, This is Nrd from TechM' 
+			      echo 'Hello Hitman..!'
 				}
 				}
-		stage('Two') {
-			steps {
-			      input('Do you want to proceed?')
-				}
-				}
-		stage('Three') {
-			when {
-				not{
-				     branch "master"
-				    }
-				}
-				steps { echo "hello" 
+				
+		    stage('Virat18') {
+				steps  {
+					input('Do you want to proceed King ?')
+					}
 				}
 
+		    stage('SKY63') {
+				when {
+					not{
+				     branch "master"
+				    	    }
+				      }
+				steps { echo "Hello Mr.360 😁" }
+
 				}
-	stage('Four') {
-		parallel {
-		stage('Test_Job') {
+				
+		    stage('Lord54') {
+			parallel {
+				      stage ('Test_Job') 
+					 {
+					    steps {
+					    build ('Test_Job')
+						echo "Test_Job is running ..."
+						  }
+					  }
+					
+					stage ('test_java') 
+					{
+					steps {
+					    build ('test_java')
+						echo "test_java is running ..."	
+						}
+					}
+				  }
+				}
+	    }
+}
+
+
+
+#######################################################################################################
+
+pipeline 
+{
+	agent slave1
+
+	    stages 
+	    {
+		    stage('Rohit45') {
 			steps {
-				echo "Test_Job is running ..."
-				}    }
-		stage('test_java') {
-			steps {
-				echo "test_java is running ..."
-				}    }
+			      echo 'Hi, This is Nrd from TechM'
+				}
+				}
+				
+		    stage('Virat18') {
+				steps  {
+					input('Do you want to proceed?')
+					}
+				}
+
+		    stage('SKY63') {
+				when {
+					not{
+				     branch "master"
+				    	    }
+				      }
+				steps { echo "hello" }
+
+				}
+				
+		    stage('Lord54') {
+			parallel {
+				      stage ('Test_Job') 
+					 {
+					    steps {
+					    build ('Test_Job')
+						echo "Test_Job is running ..."
+						  }
+					  }
+					
+					stage ('test_java') 
+					{
+					steps {
+					    build ('test_java')
+						echo "test_java is running ..."	
+						}
+					}
+				  }
+				}
+	    }
+}
