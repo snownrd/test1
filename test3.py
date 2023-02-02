@@ -1,2 +1,2 @@
 print("Hello Nrd")
-print("Execution is successful")
+print("this is the 1st python script")
